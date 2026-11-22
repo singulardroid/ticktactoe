@@ -36,4 +36,4 @@ is the point: everything here is meant to stay readable.
 
 ## Review
 
-@.claude/rules/review-criteria.md
+#    # @.claude/rules/review-criteria.md
