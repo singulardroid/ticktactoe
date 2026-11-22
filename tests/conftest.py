@@ -17,3 +17,10 @@ def board_from():
         return [EMPTY if cell == "." else cell for cell in cells]
 
     return build
+
+
+@pytest.fixture(autouse=True)
+def home(tmp_path, monkeypatch):
+    """Point the home directory at a scratch folder, so no test writes the real game log."""
+    monkeypatch.setenv("HOME", str(tmp_path))
+    return tmp_path
