@@ -35,6 +35,12 @@ X always opens. Type `q` to give up.
 | (none) | You play X against the computer |
 | `--mark O` | You play O, the computer opens as X |
 | `--two-player` | Two people at the same keyboard, no computer |
+| `--log PATH` | Where a finished game is appended (default: `~/.tictactoe/games.log`) |
+| `--player NAME` | The name recorded in the log alongside the game |
+
+Every finished game appends one tab separated line to the log: the outcome (`X`,
+`O` or `draw`), the cells played in order and numbered as on screen, and the
+player's name if one was given. An abandoned game is not logged.
 
 The computer searches the game out to the end rather than guessing, so it will
 never lose. A draw against it is a win.
@@ -51,8 +57,8 @@ Or, with pytest already installed:
 python -m pytest
 ```
 
-Fifty-two tests, well under a second. They cover the board, every winning line,
-the legality of a move, the opponent and the terminal loop.
+Sixty tests, well under a second. They cover the board, every winning line,
+the legality of a move, the opponent, the terminal loop and the game log.
 
 ## Layout
 
